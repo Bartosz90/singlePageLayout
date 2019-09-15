@@ -29,6 +29,8 @@ sections.forEach(section => {
 
 // navigation
 const main = document.querySelector(".main");
+const nav = document.querySelector(".nav");
+const hamburger = document.querySelector(".hamburger");
 navBtns = document.querySelectorAll(".navBtn");
 navBtns.forEach(btn => {
   btn.addEventListener("click", moveToSection);
@@ -36,3 +38,6 @@ navBtns.forEach(btn => {
 function moveToSection(e) {
   main.style.transform = `translate(${e.target.dataset.x}%, ${e.target.dataset.y}%)`;
 }
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});

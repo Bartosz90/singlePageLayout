@@ -3,6 +3,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -49,7 +50,7 @@ body {
 }
 
 .nav {
-  width: 185px;
+  width: 250px;
   position: fixed;
   right: 10px;
   top: 10px;
@@ -66,11 +67,81 @@ body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 3px;
+  -webkit-transform: translateX(260px);
+          transform: translateX(260px);
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .nav .navBtn {
   width: 30%;
   padding: 3px 5px;
-  margin: 3px;
+  margin: 2px;
   cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.nav .hamburger {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  padding: 5px 0;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background-color: transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.nav .hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 8px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.nav.active {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.nav.active .hamburger .bar1 {
+  -webkit-transform: translateY(8.5px) rotate(-40deg);
+          transform: translateY(8.5px) rotate(-40deg);
+}
+
+.nav.active .hamburger .bar2 {
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
+}
+
+.nav.active .hamburger .bar3 {
+  -webkit-transform: translateY(-8.5px) rotate(40deg);
+          transform: translateY(-8.5px) rotate(40deg);
 }

@@ -1,40 +1,82 @@
 *
-  margin: 0
-  padding: 0
-  box-sizing: border-box
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    outline: none
 body 
-  color: #fff
-  font-family: sans-serif
-  overflow: hidden
+    color: #fff
+    font-family: sans-serif
+    overflow: hidden
   
 =flexCenter()
-  display: flex 
-  justify-content: center 
-  align-items: center
-  flex-wrap: wrap
+    display: flex 
+    justify-content: center 
+    align-items: center
+    flex-wrap: wrap
 .main 
-  width: 300vw
-  height: 300vh
-  position: relative
-  top: -100vh
-  left: -100vw
-  transition: .3s
-  +flexCenter()
-  .section 
-    width: 100vw 
-    height: 100vh
+    width: 300vw
+    height: 300vh
+    position: relative
+    top: -100vh
+    left: -100vw
+    transition: .3s
     +flexCenter()
+    .section 
+        width: 100vw 
+        height: 100vh
+        +flexCenter()
 .nav 
-  width: 185px
-  position: fixed 
-  right: 10px 
-  top: 10px
-  border: 2px solid #fff
-  border-radius: 8px
-  +flexCenter()
-  .navBtn 
-    width: 30%
-    padding: 3px 5px
-    margin: 3px
-    cursor: pointer
-   
+    width: 250px
+    position: fixed 
+    right: 10px 
+    top: 10px
+    border: 2px solid #fff
+    border-radius: 8px
+    +flexCenter()
+    justify-content: space-around
+    padding: 3px
+    transform: translateX(260px)
+    transition: .3s
+    .navBtn 
+        width: 30%
+        padding: 3px 5px
+        margin: 2px
+        cursor: pointer
+        background-color: transparent
+        color: #fff
+        border: 2px solid #fff
+        border-radius: 8px
+    .hamburger 
+        position: absolute
+        left: -50px
+        top: 50%
+        transform: translateY(-50%)
+        width: 40px 
+        height: 40px
+        padding: 5px 0
+        border: 2px solid #fff 
+        border-radius: 8px
+        background-color: transparent
+        cursor: pointer
+        display: flex 
+        flex-direction: column
+        justify-content: space-around 
+        align-items: center
+        overflow: hidden
+        .bar 
+            width: 30px
+            height: 4px
+            background-color: #fff
+            border-radius: 8px
+            transition: .3s
+            transform-origin: center center
+.nav.active 
+    transform: none
+    .hamburger 
+        .bar1 
+            transform: translateY(8.5px) rotate(-40deg)
+        .bar2 
+            transform: translateX(60px)
+        .bar3
+            transform: translateY(-8.5px) rotate(40deg)
+
