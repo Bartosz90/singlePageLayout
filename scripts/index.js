@@ -36,12 +36,17 @@ navBtns.forEach(btn => {
   btn.addEventListener("click", moveToSection);
 });
 function moveToSection(e) {
+  if (!e.target.classList.value.includes("active")) {
+    main.style.transform = `scale(.9) translate(${e.target.dataset.x}%, ${e.target.dataset.y}%)`;
+    setTimeout(() => {
+      main.style.transform = ` translate(${e.target.dataset.x}%, ${e.target.dataset.y}%)`;
+    }, 800);
+  }
+  nav.classList.remove("active");
   navBtns.forEach(btn => {
     btn.classList.remove("active");
   });
-  main.style.transform = `translate(${e.target.dataset.x}%, ${e.target.dataset.y}%)`;
   e.target.classList.add("active");
-  nav.classList.remove("active");
 }
 hamburger.addEventListener("click", () => {
   nav.classList.toggle("active");
@@ -49,4 +54,5 @@ hamburger.addEventListener("click", () => {
 
 main.addEventListener("click", () => {
   nav.classList.remove("active");
+  main.classList.toggle("pers");
 });
