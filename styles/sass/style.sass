@@ -1,0 +1,40 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+body 
+  color: #fff
+  font-family: sans-serif
+  overflow: hidden
+  
+=flexCenter()
+  display: flex 
+  justify-content: center 
+  align-items: center
+  flex-wrap: wrap
+.main 
+  width: 300vw
+  height: 300vh
+  position: relative
+  top: -100vh
+  left: -100vw
+  transition: .3s
+  +flexCenter()
+  .section 
+    width: 100vw 
+    height: 100vh
+    +flexCenter()
+.nav 
+  width: 185px
+  position: fixed 
+  right: 10px 
+  top: 10px
+  border: 2px solid #fff
+  border-radius: 8px
+  +flexCenter()
+  .navBtn 
+    width: 30%
+    padding: 3px 5px
+    margin: 3px
+    cursor: pointer
+   
