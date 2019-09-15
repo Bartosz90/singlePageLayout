@@ -46,3 +46,7 @@ function moveToSection(e) {
 hamburger.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
+
+main.addEventListener("click", () => {
+  nav.classList.remove("active");
+});
