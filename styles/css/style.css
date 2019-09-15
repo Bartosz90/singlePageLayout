@@ -47,6 +47,16 @@ body {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: #1d211e;
+  border: 1px solid #fff;
+}
+
+.main .section h1 {
+  font-size: 40px;
+}
+
+.main .section:nth-of-type(odd) {
+  background-color: #2e2d2a;
 }
 
 .nav {
@@ -124,6 +134,11 @@ body {
   transition: .3s;
   -webkit-transform-origin: center center;
           transform-origin: center center;
+}
+
+.nav .navBtn.active {
+  background-color: #fff;
+  color: #000;
 }
 
 .nav.active {

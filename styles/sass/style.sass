@@ -25,6 +25,12 @@ body
         width: 100vw 
         height: 100vh
         +flexCenter()
+        background-color: #1d211e
+        border: 1px solid #fff
+        h1 
+            font-size: 40px
+        &:nth-of-type(odd)
+            background-color: #2e2d2a
 .nav 
     width: 250px
     position: fixed 
@@ -70,6 +76,10 @@ body
             border-radius: 8px
             transition: .3s
             transform-origin: center center
+.nav 
+    .navBtn.active 
+        background-color: #fff 
+        color: #000
 .nav.active 
     transform: none
     .hamburger 
